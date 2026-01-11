@@ -15,6 +15,6 @@ course["CUL 101"] = {"name":"Introduction to Culinary Arts", "cred":4, "dept":"C
 course["CUL 242"] = {"name":"Charcuterie", "cred":4, "dept":"CUL", "desc":"Learn professional skills in variations of hors d'oeuvres and savories"}
 course["ANTH 103"] = {"name":"Cultural Anthropology", "cred":4, "dept":"ANT", "desc":"Provides an introduction to the diversity of human beliefs and behaviors around the world"}
 course["ANTH 254"] = {"name":"Magic, Witchcraft, Religion", "cred":4, "dept":"ANT", "desc":"Introduces students to the subject of religion in the broad anthropological context"}
-course["AUT 101"] = {"name":"Basic Electricity-Automotive", "cred":4, "dept":"AUT", "desc":"A self paced course that provides understanding of fundamental principles of electricity"}
+course["AUT 101"] = {"name":"Basic Electricity-Automotive", "cred":2, "dept":"AUT", "desc":"A self paced course that provides understanding of fundamental principles of electricity"}
 course["AUT 281"] = {"name":"Hybrid Electric Vehicles II", "cred":4, "dept":"AUT", "desc":"A study of HEV (hybrid electric vehicles) and EV (electric vehicles) part 2"}
 
