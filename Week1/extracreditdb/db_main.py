@@ -1,8 +1,8 @@
-#Michael Audi - Database Extra Credit Assignment Main Program Loop
+""" The Main function loop/menu for running operations on a database of course information """
+
 import db_functions as dbf
 
 course_db = {}
-
 ##course[""] = {"name":"", "cred":#, "dept":"", "desc":""}
 course_db["CIS 161"] = {"name":"Computer Science 1", "cred":4, "dept":"CIS", "desc":"Algorithms, Algorithms, Algorithms!"}
 course_db["CIS 120"] = {"name":"Computer Concepts", "cred":4, "dept":"CIS", "desc":"Computer Fundamentals, Key Applications, and Living Online"}
@@ -16,14 +16,16 @@ course_db["AUT 101"] = {"name":"Basic Electricity-Automotive", "cred":2, "dept":
 course_db["AUT 281"] = {"name":"Hybrid Electric Vehicles II", "cred":4, "dept":"AUT", "desc":"A study of HEV (hybrid electric vehicles) and EV (electric vehicles) part 2"}
 
 def print_all():
+    """prints all information in course_db using dbf.print_course_info"""
     return dbf.print_course_info(course_db)
 
 def print_individual():
+    """Queries the user for a course number, then prints it from course_db using dbf.print_single_course"""
     coursenum = input("Input Course Number to print (Ex: CIS 161 or ANTH 254):")
     return dbf.print_single_course(course_db, coursenum)
 
 def add_entry():
-    ##ask for each value
+    """Queries the user for Course Number, name, credits, department, and description, then adds it to course_db using dbf.add_course"""
     coursenum = input("Input Course Number to add (Ex: CIS 161 or ANTH 254) - ")
     coursename = input("Input Course Name to add (Ex: Computer Science 1) - ")
     coursecred = input("Input Course Credits to add (Ex: 4) - ")
@@ -32,19 +34,23 @@ def add_entry():
     except ValueError:
         print("Type a number next time.")
         return False    
-    coursedept = input("Input Course Department to add (Ex: CIS or ANT) (3 char max) - ")
+    coursedept = input("Input Course Department to add (Ex: CIS or ANT) (3 char exactly ALLCAPS) - ")
     coursedesc = input("Input Course Description to add (Ex: Algorithms, Algorithms, Algorithms!) - ")
     return dbf.add_course(course_db, coursenum, coursename, coursecred, coursedept, coursedesc)
 
 def del_entry():
+    """Queries the user for a Course number then deletes it from course_db."""
     coursenum = input("Input Course Number to delete (Ex: CIS 161 or ANTH 254) - ")
     return dbf.delete_course(course_db, coursenum)
 
 def print_dept():
-    coursedept = input("Input Course Department to print (Ex: CIS or ANT) (3 char CAPS) - ")
+    """Queries the user for a course department, then prints out that department's courses using dbf.print_department_courses"""
+    coursedept = input("Input Course Department to print (Ex: CIS or ANT) (3 char exactly ALLCAPS) - ")
     return dbf.print_department_courses(course_db, coursedept)
 
 def main():
+    """Course Database Utility - This Main function loop creates a menu for accessing the various database functions in order to manipulate the course_db dictionary"""
+
     print("Welcome to the Course Database Utility!")
     while True:
         print("\nPlease choose an option by typing the corresponding number:")
