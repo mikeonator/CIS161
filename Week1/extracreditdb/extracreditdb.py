@@ -15,9 +15,15 @@ course["AUT 101"] = {"name":"Basic Electricity-Automotive", "cred":2, "dept":"AU
 course["AUT 281"] = {"name":"Hybrid Electric Vehicles II", "cred":4, "dept":"AUT", "desc":"A study of HEV (hybrid electric vehicles) and EV (electric vehicles) part 2"}
 
 def print_course_info(inDict):
-    entries = len(inDict)
-
-    print(f"| {'Course Number':^13} | {'Course Name':^30} | {'Credits':^7} | {'Department':^10} | {'Description'}\n" + f"|-{'':-^13}-|-{'':-^30}-|-{'':-^7}-|-{'':-^10}-|-{'':-^12}")
+    print(f"| {'Course Number':^13} | {'Course Name':^30} | {'Credits':^7} | {'Department':^10} | {'Description'}")
+    print(f"|-{'':-^13}-|-{'':-^30}-|-{'':-^7}-|-{'':-^10}-|-{'':-^12}")
 
     for key, value in inDict.items():
         print(f"| {key:^13} | {value['name']:^30} | {value['cred']:^7} | {value['dept']:^10} | {value['desc']:.100}")
+
+def print_single_course(inDict, coursenum):
+    if coursenum in inDict:
+        print_course_info({coursenum: inDict[coursenum]})
+    else:
+        print("Course Number not found in database. Check formatting, and make sure you've capitalized the department")
+
