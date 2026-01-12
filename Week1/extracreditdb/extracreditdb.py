@@ -27,3 +27,9 @@ def print_single_course(inDict, coursenum):
     else:
         print("Course Number not found in database. Check formatting, and make sure you've capitalized the department")
 
+def delete_course(inDict, coursenum):
+    if coursenum in inDict:
+        print(f"Successfully deleted {coursenum} - {inDict[coursenum]['name']}")
+        del inDict[coursenum]
+    else:
+        print("Deletion failed. Course Number not found in database. Check formatting, and make sure you've capitalized the department")
