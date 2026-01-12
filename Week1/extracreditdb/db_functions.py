@@ -1,3 +1,4 @@
+#Michael Audi
 """ Database functions for Course Database Utility """
 
 def print_course_info(inDict):

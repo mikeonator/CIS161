@@ -1,3 +1,4 @@
+#Michael Audi
 """ The Main function loop/menu for running operations on a database of course information """
 
 import db_functions as dbf
