@@ -1,12 +1,8 @@
 #Michael Audi - Database Extra Credit Assignment
 
-
-
-
-
 course = {}
 
-##course[""] = {"name":"", "cred":int(), "dept":"", "desc":""}
+##course[""] = {"name":"", "cred":#, "dept":"", "desc":""}
 course["CIS 161"] = {"name":"Computer Science 1", "cred":4, "dept":"CIS", "desc":"Algorithms, Algorithms, Algorithms!"}
 course["CIS 120"] = {"name":"Computer Concepts", "cred":4, "dept":"CIS", "desc":"Computer Fundamentals, Key Applications, and Living Online"}
 course["MUS 118"] = {"name":"Music Technology MIDI/Audio", "cred":3, "dept":"MUS", "desc":"Use various music production tools in live sound engineering and mixing"}
@@ -18,3 +14,10 @@ course["ANTH 254"] = {"name":"Magic, Witchcraft, Religion", "cred":4, "dept":"AN
 course["AUT 101"] = {"name":"Basic Electricity-Automotive", "cred":2, "dept":"AUT", "desc":"A self paced course that provides understanding of fundamental principles of electricity"}
 course["AUT 281"] = {"name":"Hybrid Electric Vehicles II", "cred":4, "dept":"AUT", "desc":"A study of HEV (hybrid electric vehicles) and EV (electric vehicles) part 2"}
 
+def print_course_info(inDict):
+    entries = len(inDict)
+
+    print(f"| {'Course Number':^13} | {'Course Name':^30} | {'Credits':^7} | {'Department':^10} | {'Description'}\n" + f"|-{'':-^13}-|-{'':-^30}-|-{'':-^7}-|-{'':-^10}-|-{'':-^12}")
+
+    for key, value in inDict.items():
+        print(f"| {key:^13} | {value['name']:^30} | {value['cred']:^7} | {value['dept']:^10} | {value['desc']:.100}")
