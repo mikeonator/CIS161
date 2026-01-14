@@ -22,6 +22,7 @@ try:
 except TypeError:
     print("if x = 1.825")
     print("TypeError: 'float' object cannot be interpreted as an integer")
+    print("bin() and hex() can only accept integers, not floats.")
 
 x = 18
 
