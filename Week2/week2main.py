@@ -51,12 +51,71 @@ print(f"The Sum of x ({x}), y ({y}), and z ({z}) is: {w}")
 print(f"{'':-^10}")
 print("--Compression--")
 
+og_size = 240
+dict_size = 25
+comp_text_size = 148
 
 #Step 1 - Compression percentage formula
-def compression(og_size:int,dict_size:int,comp_text_size:int):
-    return (1 - ((comp_text_size + dict_size)/og_size))
+def compression(og:int,dsize:int,compressed:int):
+    return (1 - ((compressed + dsize)/og))
 
 print(f"{'':-^10}")
-print("Step 1")
+print("Step 1 and 2")
 
-print(compression(240, 25, 148))
+#Step 2 - Calculate the compression percentage for the given variables
+compress = compression(og_size, dict_size, comp_text_size)
+print(compress)
+
+print(f"{'':-^10}")
+print("Step 3")
+
+print(f"{'Compressed Text Size:':>21} {comp_text_size:<} characters")
+print(f"{'Dictionary Size:':>21} {dict_size:<} characters")
+print(f"{'Total Characters:':>21} {(comp_text_size+dict_size):<} characters")
+print(f"{'Original Text Size:':>21} {og_size:<} characters")
+print(f"{'Compression:':>21} {(compress*100):<.4}%")
+
+print(f"{'':-^10}")
+print("Step 3 Again!")
+
+og_size = 3201
+dict_size = 402
+comp_text_size = 1999
+
+compress = compression(og_size, dict_size, comp_text_size)
+
+print(f"{'Compressed Text Size:':>21} {comp_text_size:<} characters")
+print(f"{'Dictionary Size:':>21} {dict_size:<} characters")
+print(f"{'Total Characters:':>21} {(comp_text_size+dict_size):<} characters")
+print(f"{'Original Text Size:':>21} {og_size:<} characters")
+print(f"{'Compression:':>21} {(compress*100):<.4}%")
+
+print(f"{'':-^10}")
+print("Step 3 Again!!")
+
+og_size = 290120
+dict_size = 23205
+comp_text_size = 210384
+
+compress = compression(og_size, dict_size, comp_text_size)
+
+print(f"{'Compressed Text Size:':>21} {comp_text_size:<} characters")
+print(f"{'Dictionary Size:':>21} {dict_size:<} characters")
+print(f"{'Total Characters:':>21} {(comp_text_size+dict_size):<} characters")
+print(f"{'Original Text Size:':>21} {og_size:<} characters")
+print(f"{'Compression:':>21} {(compress*100):<.4}%")
+
+print(f"{'':-^10}")
+print("Step 3 Again!!!")
+
+og_size = 25
+dict_size = 5
+comp_text_size = 15
+
+compress = compression(og_size, dict_size, comp_text_size)
+
+print(f"{'Compressed Text Size:':>21} {comp_text_size:<} characters")
+print(f"{'Dictionary Size:':>21} {dict_size:<} characters")
+print(f"{'Total Characters:':>21} {(comp_text_size+dict_size):<} characters")
+print(f"{'Original Text Size:':>21} {og_size:<} characters")
+print(f"{'Compression:':>21} {(compress*100):<.4}%")
