@@ -20,6 +20,8 @@ def main():
     
     ##Step 3
     print("\n--- Step 3 ---")
+    addto = input("How many years do you wish to add to your age?\n")
+    print(f"Your age in {addto} years would be {int(addto) + int(age)}")
     
 
 if __name__ == "__main__":
