@@ -123,7 +123,7 @@ life_table = {
     117: 0.912353,
     118: 0.957970,
     119: 1.000000
-    }
+}
 
 def life_expectancy(age:int):
     '''
