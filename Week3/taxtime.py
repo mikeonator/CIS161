@@ -21,9 +21,14 @@ def tax_time(hourly_wage:float):
     '''
     gross_annual = (hourly_wage * 40) * 50
     tax_rate = 0.1
+
+    #will iterate thru the tax table, and if gross annual
+    #is greater or equal than the key, it will set the tax_rate to the corresponding value
     for key, value in tax_table.items():
         if gross_annual >= key:
             tax_rate = value
+
     get_taxed = tax_rate * gross_annual
     after_tax = gross_annual - get_taxed
+    
     return gross_annual, get_taxed, after_tax
