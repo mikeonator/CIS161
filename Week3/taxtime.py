@@ -11,6 +11,14 @@ tax_table = {
 }
 
 def tax_time(hourly_wage:float):
+    '''
+    Will recieve an hourly wage and, assuming a 40 hr work week for 50 weeks, will calculate
+    and return a gross annual pay, tax amount, and after tax pay based on the assignment's
+    provided tax table.
+    
+    :param hourly_wage: Float variable that should contain someone's hourly wage.
+    :type hourly_wage: float
+    '''
     gross_annual = (hourly_wage * 40) * 50
     tax_rate = 0.1
     for key, value in tax_table.items():
