@@ -26,7 +26,12 @@ def main():
     print(f"Your age in {addto} years would be {int(addto) + int(age)}\n")
 
     ##Step 3 Extra Credit
-    print(f"Based on the Actuarial Life Table as used in the 2025 Trustees Report by the Social Security Administration")
+    print(f"{'':-^13}")
+    print(f"You are currently age {age}.")
+    print(f"Based on the Actuarial Life Table as used in the 2025 Trustees Report by the Social Security Administration...")
+    print(f"...")
+    print(f"...")
+    print(f"...")
     print(f"You are expected to die in the year {le.life_expectancy(int(age))}!")
 
 
