@@ -2,3 +2,6 @@
 _start:
 	MOV r0,#4294967040
     MOV r1,#0xf
+    
+	
+	SWI 0
