@@ -1,0 +1,67 @@
+#Michael Audi - CIS161 Week 3 Main Assignment
+
+import lifeexpectancy as le
+import taxtime as tax
+
+def main():
+
+    ##Step 1
+    print("--- Step 1 ---")
+    ###take and print input
+    name = input("What's your name?\n")
+    print(f"Hello {name}!")
+
+    ##Step 2
+    print("\n--- Step 2 ---")
+    ###take age as input
+    age = input("What's your age?\n")
+    
+    try:
+        print(f"Your age in 5 years would be {age + 5}")
+    except TypeError:
+        print('TypeError: can only concatenate str (not "int") to str')
+        print('Because age is an str, the + is being treated as string concatenation, not as addition.\n')
+        ###turn age str into an int before printing
+        print(f"Your age in 5 years would be {(int(age) + 5)}")
+    
+    ##Step 3
+    print("\n--- Step 3 ---")
+    ###take years to add as input, then print with int() and addition of years
+    addto = input("How many years do you wish to add to your age?\n")
+    print(f"Your age in {addto} years would be {int(addto) + int(age)}\n")
+
+    ##Step 3 Extra Credit
+    print("\n--- Step 3 Extra Credit ---")
+    ###see lifeexpectancy.py for more explanation
+    ###printing output from lifeexpectancy.py
+    print(f"You are currently age {age}.")
+    print(f"Based on the Actuarial Life Table as used in the 2025 Trustees Report by the Social Security Administration...")
+    print(f"...")
+    print(f"...")
+    print(f"...")
+    print(f"You are expected to die in the year {le.life_expectancy(int(age))}!")
+
+    ##Step 4
+    print("\n--- Step 4 ---")
+    ###collecting hours a week and hourly wage as variables
+    hours_week = float(input("Enter the number of hours you work in a week: "))
+    hourly_wage = float(input("Enter your hourly wage: $"))
+
+    ##Step 5
+    print("\n--- Step 5 ---")
+    ###wage math. f string formatting so it looks pretty
+    gross_pay = hours_week * hourly_wage
+    print(f"Your gross pay this week will be ${gross_pay:<,.2f}")
+    print(f"Your estimated annual pay will be ${(gross_pay * 52):<,.2f}")
+
+    ##Step 5 Extra Credit
+    print("\n--- Step 5 Extra Credit ---")
+    ###TAX TIME!!!!!!! (see taxtime.py for information)
+    ###printing output from taxtime.py but with f string formatting
+    tax_info = tax.tax_time(hourly_wage)
+    print(f"With an hourly wage of ${hourly_wage}, and an estimated hourly work week of 40 hours for 50 weeks")
+    print(f"you will have a gross annual pay of ${tax_info[0]:,.2f} and an after tax payout of ${tax_info[2]:,.2f}.")
+    print(f"This means the government yoinked ${tax_info[1]:,.2f} from your paycheck!")
+
+if __name__ == "__main__":
+    main()
