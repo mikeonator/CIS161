@@ -1,4 +1,4 @@
-# CSC161 Repository
+# CIS161 Repository
 
 ## Week 1
 
