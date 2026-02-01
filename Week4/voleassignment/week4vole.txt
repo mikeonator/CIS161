@@ -1,0 +1,35 @@
+Encoded instructions    Translation
+0x156C                  Load register 0x5 with the bit pattern found in the memory cell at address 0x6C.
+0x166D                  Load register 0x6 with the bit pattern found in the memory cell at address 0x6D.
+0x5056                  Add the contents of register 0x5 and 0x6 as though they were two’s complement representation and leave the result in register 0x0.
+0x306E                  Store the contents of register 0x0 in the memory cell at address 0x6E.
+0xC000                  Halt.
+
+Write the example program above in actual bit patterns.
+
+    0x156C
+        0001 0101 0110 1100
+    0x166D
+        0001 0110 0110 1101
+    0x5056
+        0101 0000 0101 0110
+    0x306E
+        0011 0000 0110 1110
+    0xC000
+        1100 0000 0000 0000
+
+The following are instructions written in Vole machine language. Rewrite them in English.
+
+    0x368A
+        STORE the bit pattern found in register 0x6 in the memory cell whose address is 0x8A
+    0xBADE
+        JUMP to the instruction located in the memory cell at address DE if the bit pattern in register 0xA is equal to the bit pattern in register 0x0. Otherwise, continue with the normal sequence of execution.
+    0x803C
+        AND the bit patterns in register 0x3 and 0xC and place the result in register 0x0
+    0x40F4
+        MOVE the bit pattern found in register 0xF to register 0x4
+
+Here are some instructions in English. Translate each of them into Vole machine language.
+LOAD register number 0x3 with the value stored at location hexadecimal value 0x56.
+ROTATE register number 0x5 three bits to the right.
+AND the contents of register 0xA with the contents of register 0x5 and leave the result in register 0x0.
