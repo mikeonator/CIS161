@@ -4,16 +4,18 @@ import cream_history as creamy
 
 ## Step 1
 def avg_three(num1,num2,num3):
+    '''
+    This function takes three numbers as arguments and returns their average.
+    '''
     return ((num1 + num2 + num3)/3)
 
 ## Step 2
-### CANNOT MOVE THE PRINT STATEMENTS BEFORE
-### FUNCTION DEFINITION BECAUSE THE PYTHON
-### INTERPRETER GOES LINE BY LINE AND
-### WOULDN'T KNOW WHAT avg_three() IS YET
 print("---- Step 1 & 2 ----")
-print (avg_three(7, 5, 9))
-print (avg_three(6, 6, 7))
+### cannot move the print(avg_three()) statements before
+### function definition because the python interpreter
+### goes line by line and wouldn't know what avg_three() is yet
+print(avg_three(7, 5, 9))
+print(avg_three(6, 6, 7))
 
 ## Step 3
 ### print(num1) would not work because
@@ -30,6 +32,9 @@ except NameError:
 print("\n---- Step 4 ----")
 
 def dog_age(dog_years:int):
+    '''
+    This function takes an integer as an argument and returns the equivalent human years.
+    '''
     return (24 + (dog_years - 2) * 4)
 
 input1 = 5
@@ -41,9 +46,15 @@ print(f"{input2} dog years is equivalent to {dog_age(input2)} human years.")
 print("\n---- Step 5 ----")
 
 def car_query(purchase_price = float(input("What is the purchase price? ")),years = int(input("How many years since release? ")),car_type = input("What type of car is it (German/Japanese/Italian)? ")):
+    '''
+    This function takes three arguments (with input prompts as default) and returns the purchase price, years, and car type.
+    '''
     return purchase_price, years, car_type
 
 def car_value(purchase_price, years, car_type):
+    '''
+    This function takes three arguments and returns the value of the car based on the purchase price, years, and car type.
+    '''
     if car_type == "German":
         return purchase_price * (.95 ** years)
     elif car_type == "Japanese":
@@ -77,6 +88,9 @@ print(f"Your {dog_name} is {dog_age(dog_years)} human years old")
 print("\n---- Step 7 ----")
 
 def ice_cream_cone_price(num_scoops: int) -> float:
+    '''
+    This function takes an integer as an argument and returns the price of the ice cream cone.
+    '''
     return (num_scoops * 1.15) + 2.25
 
 print("Ice cream cone price calculator:")
