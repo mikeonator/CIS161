@@ -47,3 +47,15 @@ Pulling previous years ice cream sales data and calculating the average price fo
 ### ice_cream_prices.csv
 
 Week 4 Extra Credit CSV file containing the previous years ice cream sales data.
+
+### voleassignment
+
+Written Vole Machine Language Assignment Folder
+
+#### week4vole.docx
+
+Written Vole Machine Language Assignment DOCX submission
+
+#### VoleMachineLanguage.pdf
+
+Vole Machine Language OpCodes, Operands, and Descriptions
