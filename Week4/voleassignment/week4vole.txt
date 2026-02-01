@@ -30,6 +30,46 @@ The following are instructions written in Vole machine language. Rewrite them in
         MOVE the bit pattern found in register 0xF to register 0x4
 
 Here are some instructions in English. Translate each of them into Vole machine language.
-LOAD register number 0x3 with the value stored at location hexadecimal value 0x56.
-ROTATE register number 0x5 three bits to the right.
-AND the contents of register 0xA with the contents of register 0x5 and leave the result in register 0x0.
+    LOAD register number 0x3 with the value stored at location hexadecimal value 0x56.
+        0x1356
+    ROTATE register number 0x5 three bits to the right.
+        0xA503
+    AND the contents of register 0xA with the contents of register 0x5 and leave the result in register 0x0.
+        0x80A5
+
+Suppose the Vole memory cells from addresses 0x00 to 0x05 contain the bit patterns given in the following table:
+
+
+Address Contents
+0x00    0x14
+0x01    0x02
+0x02    0x34
+0x03    0x17
+0x04    0xC0
+0x05    0x00
+
+If we start the machine with its program counter containing 0x00, what bit pattern is in the memory cell whose address is 0x17 when the machine halts?
+
+    Step 1 - 0x1402 - Load the register 0x4 with the bit pattern found in the memory cell whose address is 0x02
+        register 0x4 = 0x34
+    
+    Step 2 - 0x3417 - Store the bit pattern found in register 0x4 into the memory cell whose address is 0x17
+        memory address 0x17 = 0x34
+    
+    Step 3 - 0xC000 - Halt
+
+    The bit pattern 0x34 is in memory cell whose address is 0x17
+
+Perform the indicated operations.
+
+        00001011
+    AND 10101011
+    =   00001011
+
+        01001011
+    OR  10101011
+    =   11101011
+
+        01001011
+    XOR 11101100
+    =   10100111
