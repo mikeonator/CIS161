@@ -32,3 +32,18 @@ Which basically just tells you how screwed you are...
 ### assemblysave.s
 
 Assembler file save from the ARM simulator at <https://cpulator.01xz.net/?sys=arm-de1soc>
+
+## Week 4
+
+### week4main.py
+
+Week 4 main python assignment
+
+### cream_history.py
+
+Week 4 Extra Credit
+Pulling previous years ice cream sales data and calculating the average price for half a pint of ice cream.
+
+### ice_cream_prices.csv
+
+Week 4 Extra Credit CSV file containing the previous years ice cream sales data.
