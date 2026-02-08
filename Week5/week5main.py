@@ -1,5 +1,8 @@
 # Michael Audi - CIS161 Week 5 Main Assignment
 
+import requests
+import psutil
+
 def divisible_five(numin:int):
     '''
     Checks if the input integer is divisible
@@ -98,6 +101,12 @@ def poolpricedict(guestage:int):
             priceout = price
     return priceout
 
+def substring_request_find(substring:str, url:str):
+    response = requests.get(url)
+    webpage = response.text
+    count = webpage.count(substring)
+    print(f"The substring '{substring}' appears {count} times in the HTML source of {url}")
+
 def main():
     # Step 1
     print("\n----- Step 1 -----")
@@ -108,7 +117,6 @@ def main():
     print("\n----- Step 2.1 -----")
     statein21(str(input("Input the name of a State: ")))
     
-
     # Step 2.2
     print("\n----- Step 2.2 -----")
     user22 = str(input("Input the name of a State: ")).capitalize()
@@ -127,11 +135,13 @@ def main():
     print(f"The cost of entry for someone of age {guestage} is ${poolpricedict(guestage):.2f}.")
     print(f"The cost of entry for someone of age {guestage} is ${poolprice(guestage):.2f}.")
 
-
     # Step 4
+    print("\n----- Step 4 -----")
+    substring_request_find("Hugo","https://gohugo.io/")
 
+    # Step 5
+    print("\n----- Step 5 -----")
+    print(f"There are currently {len(psutil.pids())} processes running.")
 
-
-        
 if __name__ == "__main__":
     main()
