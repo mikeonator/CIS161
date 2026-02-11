@@ -24,6 +24,16 @@ def step3(x:int,y:int):
         x = x - y
     print("Blastoff!!")
 
+def step4():
+    while True:
+        wordin = input("Input a word: ")
+        if len(wordin) < 5:
+            break
+        print(f"{wordin} has {len(wordin)} letters.")
+    print("Goodbye!")
+
+
+
 def main():
     # Step 1
     print("\n----- Step 1 -----")
@@ -37,6 +47,9 @@ def main():
     print("\n----- Step 3 -----")
     step3(int(input("Enter an integer: ")),int(input("Enter a decrease amount: ")))
 
+    # Step 4
+    print("\n----- Step 4 -----")
+    step4()
 
 
 if __name__ == "__main__":
