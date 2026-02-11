@@ -15,15 +15,27 @@ def step2(x:int):
         x -= 1
     print("Blastoff!!")
 
+def step3(x:int,y:int):
+    while (x > 0):
+        if (x%2 == 0):
+            print(f"{x} is Even.")
+        else:
+            print(f"{x} is Odd.")
+        x = x - y
+    print("Blastoff!!")
 
 def main():
     # Step 1
-    print("\n----- Step 1-----")
+    print("\n----- Step 1 -----")
     step1(int(input("Enter an integer: ")))
 
     # Step 2
-    print("\n----- Step 2-----")
+    print("\n----- Step 2 -----")
     step2(int(input("Enter an integer: ")))
+
+    # Step 3
+    print("\n----- Step 3 -----")
+    step3(int(input("Enter an integer: ")),int(input("Enter a decrease amount: ")))
 
 
 
