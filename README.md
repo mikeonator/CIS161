@@ -59,3 +59,13 @@ Written Vole Machine Language Assignment DOCX submission
 #### VoleMachineLanguage.pdf
 
 Vole Machine Language OpCodes, Operands, and Descriptions
+
+## Week 5
+
+### week5main.py
+
+Week 5 Main Python Assignment
+
+### Week5OSWritten.md
+
+Week 5 Written Assignment on Operating Systems (which was really textbook problems which I'd already done to study for the quiz)
