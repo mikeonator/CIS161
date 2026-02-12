@@ -61,6 +61,7 @@ def step4_2():
             print("Goodbye!")
             break
         elif count == 4:
+            print(f"{wordin} has {len(wordin)} letters.")
             print("Loser!")
             break
         print(f"{wordin} has {len(wordin)} letters.")
