@@ -52,16 +52,31 @@ def step5():
         print(f"{count:>5} | {bin(count):<9} | {hex(count):<5}")
         count += 1
 
-def step6iterate(x:int):
+def step6recursion(x:int):
     if x == 0:
         return
     print(x*"*")
-    step6iterate(x-1)
+    step6recursion(x-1)
 
-def step6recursion(x:int):
+def step6iteration(x:int):
     while x != 0:
         print(x*"*")
         x -= 1
+
+def ec_sumofdigits(x:int):
+    if x < 10:
+        return x
+    else:
+        return ((x % 10) + ec_sumofdigits(x // 10))
+
+def ec_palindrome(x:str):
+    x = x.strip().replace(" ","").lower()
+    if len(x) <= 1:
+        return True
+    elif x[0] == x[-1]:
+        return ec_palindrome(x[1:-1])
+    else:
+        return False
 
 
 def main():
@@ -89,9 +104,20 @@ def main():
 
     print("\n----- Step 6 -----")
     print("Iteration:")
-    step6iterate(5)
+    step6iteration(5)
     print("Recursion:")
     step6recursion(5)
+
+    print("\n----- Extra Credit 1 -----")
+    ec1in = int(input("Input a number: "))
+    print(f"The sum of {ec1in}'s digits is {ec_sumofdigits(ec1in)}.")
+
+    print("\n----- Extra Credit 2 -----")
+    ec2in = input("Input a potential palindrome: ")
+    if ec_palindrome(ec2in):
+        print(f"{ec2in.lower()} is a palindrome.")
+    else:
+        print(f"{ec2in.lower()} is not a palindrome.")
 
 if __name__ == "__main__":
     main()
