@@ -18,6 +18,16 @@ def factor_pos_int(x:int):
             setout.add(x // i)
     return sorted(setout)
 
+def numeric_name_value(name:str):
+    alphabet = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
+    sum = 0
+    for char in name.lower():
+        for index, value in enumerate(alphabet):
+            if char == value:
+                sum += index
+    return sum
+
+
 def main():
 
     print("----- Step 1 -----")
@@ -30,6 +40,11 @@ def main():
     print("Printing all factors of a given positive integer")
     in2 = int(input("Enter an integer: "))
     print(f"The integers that are factors of {in2} are: {factor_pos_int(in2)}")
+
+    print("\n----- Step 3 -----")
+    print("Printing the numerical sum of a given name based on a 0-25 value assignment to the alphabet")
+    in3name = input("Enter your last name: ")
+    print(f"The numerical sum corresponding to the name {in3name} is: {numeric_name_value(in3name)}")
 
 if __name__ == "__main__":
     main()
