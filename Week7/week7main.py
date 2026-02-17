@@ -34,6 +34,17 @@ def recurse_int_squares(x:int):
         recurse_int_squares(x-1)
         print(x**2)    
 
+def teepee_sort(num_list):
+    evens = []
+    odds = []
+    listout = []
+    for value in num_list:
+        if value % 2 == 0:
+            evens.append(value)
+        else:
+            odds.append(value)
+    return sorted(odds) + sorted(evens, reverse=True)
+
 def main():
 
     print("----- Step 1 -----")
@@ -53,9 +64,16 @@ def main():
     print(f"The numerical sum corresponding to the name {in3name} is: {numeric_name_value(in3name)}")
 
     print("\n----- Step 4 -----")
-    print("Write recursive function that will print all occurrences of the squares of all integers from 1 to input")
+    print("Recursive function that will print all occurrences of the squares of all integers from 1 to input")
     in4int = int(input("Enter a positive integer: "))
     recurse_int_squares(in4int)
+
+    print("\n----- Step 5 -----")
+    print("Sorting function that will create a teepee of the numbers with the largest in the center")
+    in5list = list(map(int ,input("Enter integers separated by space (try and make an even teepee!): ").split()))
+    if len(in5list) == 0:
+        in5list = [12, 43, 22, 34, 2, 21, 3, 33, 81]
+    print(f"The Sorted List is as follows: {teepee_sort(in5list)}")
 
 if __name__ == "__main__":
     main()
