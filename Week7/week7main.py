@@ -27,6 +27,12 @@ def numeric_name_value(name:str):
                 sum += index
     return sum
 
+def recurse_int_squares(x:int):
+    if x == 0:
+        return
+    else:
+        recurse_int_squares(x-1)
+        print(x**2)    
 
 def main():
 
@@ -45,6 +51,11 @@ def main():
     print("Printing the numerical sum of a given name based on a 0-25 value assignment to the alphabet")
     in3name = input("Enter your last name: ")
     print(f"The numerical sum corresponding to the name {in3name} is: {numeric_name_value(in3name)}")
+
+    print("\n----- Step 4 -----")
+    print("Write recursive function that will print all occurrences of the squares of all integers from 1 to input")
+    in4int = int(input("Enter a positive integer: "))
+    recurse_int_squares(in4int)
 
 if __name__ == "__main__":
     main()
