@@ -69,3 +69,15 @@ Week 5 Main Python Assignment
 ### Week5OSWritten.md
 
 Week 5 Written Assignment on Operating Systems (which was really textbook problems which I'd already done to study for the quiz)
+
+## Week 6
+
+### week6main.py
+
+Week 6 Python Assignment
+
+## Week 7
+
+### week7main.py
+
+Week 7 Python Assignments - algorithms wheeee!
