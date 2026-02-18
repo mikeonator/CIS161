@@ -45,7 +45,7 @@ def teepee_sort(num_list):
             odds.append(value)
     return sorted(odds) + sorted(evens, reverse=True)
 
-def next_highest_number_iterative(x:int):
+def next_highest_number_iterative_only(x:int):
     if x < 10:
         return None
     initlist = list(map(int,str(x)))   
@@ -67,6 +67,37 @@ def next_highest_number_iterative(x:int):
 
     return int("".join(map(str,initlist)))
 
+def find_pivot(initlist, x):
+    if x < 0:
+        return None
+    if initlist[x] < initlist[x+1]:
+        return x
+    else:
+        return find_pivot(initlist,x-1)
+
+def reverse_end(initlist, left, right):
+    # list, pivot+1, len(list)-1
+    if left >= right:
+        return
+    initlist[left], initlist[right] = initlist[right], initlist[left]
+    return reverse_end(initlist, left+1, right-1)
+
+def next_highest_number_w_recurse(x:int):
+    if x < 10:
+        return None
+    swap_index = -1
+    initlist = list(map(int, str(x)))
+    pivot_index = find_pivot(initlist, len(initlist)-2)
+
+    if pivot_index == None:
+        return None
+    for j in range(len(initlist) - 1, pivot_index, -1):
+        if initlist[j] > initlist[pivot_index]:
+            swap_index = j
+            break
+    initlist[pivot_index], initlist[swap_index] = initlist[swap_index], initlist[pivot_index]
+    reverse_end(initlist, pivot_index+1,len(initlist)-1)
+    return int("".join(map(str,initlist)))
 
 def main():
     print("----- Step 1 -----")
@@ -74,7 +105,7 @@ def main():
     in1Low = int(input("Enter the Lower Bound: "))
     in1Up = int(input("Enter the Upper Bound: "))
     print(f"The even numbers between {in1Low} and {in1Up} are: {print_even_range(in1Low,in1Up)}")
-    
+
     print("\n----- Step 2 -----")
     print("Printing all factors of a given positive integer")
     in2 = int(input("Enter an integer: "))
@@ -92,10 +123,24 @@ def main():
 
     print("\n----- Step 5 -----")
     print("Sorting function that will create a teepee of the numbers with the largest in the center")
-    in5list = list(map(int ,input("Enter integers separated by space (try and make an even teepee!): ").split()))
+    in5list = list(map(int ,input("Enter integers separated by spaces (try and make an even teepee!): ").split()))
     if len(in5list) == 0:
         in5list = [12, 43, 22, 34, 2, 21, 3, 33, 81]
     print(f"The Sorted List is as follows: {teepee_sort(in5list)}")
+
+    print("\n----- Step 6 -----")
+    print("Rearranging digits so that the new arrangement represents the next larger value that can be represented by " \
+    "these digits (or reports that no such rearrangement exists if no rearrangement produces a larger value).")
+    in6int = int(input("Enter an integer (big one): "))
+    if len(str(in6int)) == 0:
+        in6int = 5647382901
+    out6listiterative = next_highest_number_iterative_only(in6int)
+    out6listrecursive = next_highest_number_w_recurse(in6int)
+    if out6listiterative == None or out6listrecursive == None:
+        print(f"No rearrangement of {str(in6int)} is possible.")
+    else:
+        print(f"The iteratively rearranged list is as follows: {out6listiterative}")
+        print(f"The recursively rearranged list is as follows: {out6listrecursive}")
 
 if __name__ == "__main__":
     main()
