@@ -45,8 +45,30 @@ def teepee_sort(num_list):
             odds.append(value)
     return sorted(odds) + sorted(evens, reverse=True)
 
-def main():
+def next_highest_number_iterative(x:int):
+    if x < 10:
+        return None
+    initlist = list(map(int,str(x)))   
+    pivot_index = -1
+    swap_index = -1
 
+    for i in range(len(initlist) - 2, -1, -1):
+        if initlist[i] < initlist[i+1]:
+            pivot_index = i
+            break
+    if pivot_index == -1:
+        return None
+    for j in range(len(initlist) - 1, pivot_index, -1):
+        if initlist[j] > initlist[pivot_index]:
+            swap_index = j
+            break
+    initlist[pivot_index], initlist[swap_index] = initlist[swap_index], initlist[pivot_index]
+    initlist[pivot_index+1:] = initlist[pivot_index+1:][::-1]
+
+    return int("".join(map(str,initlist)))
+
+
+def main():
     print("----- Step 1 -----")
     print("Printing even numbers within input range")
     in1Low = int(input("Enter the Lower Bound: "))
