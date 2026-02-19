@@ -3,6 +3,9 @@
 import math
 
 def print_even_range(x:int,y:int):
+    '''
+    Outputs a list of all the even numbers in a given range
+    '''
     listout = []
     while x < y:
         if x % 2 == 0:
@@ -11,6 +14,9 @@ def print_even_range(x:int,y:int):
     return listout
 
 def factor_pos_int(x:int):
+    '''
+    Outputs a sorted set of all the factors of a given positive integer
+    '''
     setout = set()
     for i in range(1, int(math.sqrt(x)) + 1):
         if x % i == 0:
@@ -19,6 +25,10 @@ def factor_pos_int(x:int):
     return sorted(setout)
 
 def numeric_name_value(name:str):
+    '''
+    based on a 0-25 numeric assignment to the alphabet,
+    takes a given name and outputs the sum of the individual letters.
+    '''
     alphabet = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
     sum = 0
     for char in name.lower():
@@ -28,6 +38,9 @@ def numeric_name_value(name:str):
     return sum
 
 def recurse_int_squares(x:int):
+    '''
+    Recursively print all of the squares of the integers from 1 to the given int
+    '''
     if x == 0:
         return
     else:
@@ -35,6 +48,11 @@ def recurse_int_squares(x:int):
         print(x**2)    
 
 def teepee_sort(num_list):
+    '''
+    performs a teepee sort on a given list:
+    odds ascending from left to middle.
+    evens descending from middle to right.
+    '''
     evens = []
     odds = []
     listout = []
@@ -46,6 +64,10 @@ def teepee_sort(num_list):
     return sorted(odds) + sorted(evens, reverse=True)
 
 def next_highest_number_iterative_only(x:int):
+    '''
+    Finds the 'Next Highest Permutation' of the given number.
+    does so using only iteration
+    '''
     if x < 10:
         return None
     initlist = list(map(int,str(x)))   
@@ -68,6 +90,10 @@ def next_highest_number_iterative_only(x:int):
     return int("".join(map(str,initlist)))
 
 def find_pivot(initlist, x):
+    '''
+    recursively finds the first number in the given list
+    that is less than the number after it
+    '''
     if x < 0:
         return None
     if initlist[x] < initlist[x+1]:
@@ -76,13 +102,21 @@ def find_pivot(initlist, x):
         return find_pivot(initlist,x-1)
 
 def reverse_end(initlist, left, right):
-    # list, pivot+1, len(list)-1
+    '''
+    recursively reverses the order of the given list
+    exits if the left digit is greater/equal to the right one?
+    this algorithm is weird im doing my best to docstring
+    '''
     if left >= right:
         return
     initlist[left], initlist[right] = initlist[right], initlist[left]
     return reverse_end(initlist, left+1, right-1)
 
 def next_highest_number_w_recurse(x:int):
+    '''
+    Finds the 'Next Highest Permutation' of the given number.
+    does so using iteration and some recursive functions
+    '''
     if x < 10:
         return None
     swap_index = -1
