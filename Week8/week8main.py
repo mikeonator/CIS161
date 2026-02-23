@@ -24,7 +24,7 @@ def vowel_check(x:str):
     count = 0
     for char in x:
         for vowel in vowels:
-            if char == vowel:
+            if char.lower() == vowel:
                 count += 1
                 break
     return count
@@ -49,10 +49,7 @@ def str_compare(x:str,y:str):
     alphabetical string comparison.
     like an "a comes before b" comparison.
     '''
-    if x < y:
-        return True
-    else:
-        return False
+    return x < y
 
 def str_ask():
     '''
@@ -129,7 +126,7 @@ def vroom_races(userin:int):
     
     #rangelimiter
     if userin > 100:
-        raise ValueError
+        raise ValueError("Input must be <= 100")
 
     #warmup
     for i in range(0,3):
@@ -148,7 +145,7 @@ def main():
     '''
     calls each step of the python assignment
     '''
-    
+
     print("\n----- Step 1 -----")
     print(stop_shouting())
 
