@@ -43,6 +43,18 @@ def str_ask():
     else:
         return (f"{ask} does not come before {ask2}.")
 
+def email_ask():
+    while(True):
+        ask = input("------Enter your email address: ")
+        ask2 = input("Enter your email address again: ")
+        if ask != ask2:
+            print("The two emails did not match, please try again...")
+            continue
+        else:
+            print("Thank you!")
+            break
+    return
+
 
 def main():
     print("\n----- Step 1 -----")
@@ -53,6 +65,9 @@ def main():
 
     print("\n----- Step 3 -----")
     print(str_ask())
+
+    print("\n----- Step 4 -----")
+    email_ask()
 
 if __name__ == "__main__":
     main()
