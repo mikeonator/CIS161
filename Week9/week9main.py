@@ -57,8 +57,10 @@ def main():
     square_1 = Square("1",10)
     square_2 = Square("2",20)
 
-    print(f"The area of square {square_1.name} is {square_1.area}")
-    print(f"The perimeter of square {self.name} is {4*(self.side)}")
+    print(f"The area of square {square_1.name} is {square_1.area()}")
+    print(f"The perimeter of square {square_1.name} is {square_1.perimeter()}")
+    print(f"The area of square {square_2.name} is {square_2.area()}")
+    print(f"The perimeter of square {square_2.name} is {square_2.perimeter()}")
 
 if __name__ == "__main__":
     main()
