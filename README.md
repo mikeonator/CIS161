@@ -88,3 +88,8 @@ Week 7 Python Assignments - algorithms wheeee!
 
 Week 8 Python Assignment - unique operations
 
+## Week 9
+
+### week9main.py
+
+Week 9 Python Assignment
