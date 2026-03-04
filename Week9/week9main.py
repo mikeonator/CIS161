@@ -30,10 +30,10 @@ class Square:
         self.side = side
     
     def area(self):
-        print(f"The area of square {self.name} is {(self.side)**2}")
+        return (self.side ** 2)
     
     def perimeter(self):
-        print(f"The perimeter of square {self.name} is {4*(self.side)}")
+        return (self.side * 4)
 
 def main():
     # Step 1
@@ -57,10 +57,8 @@ def main():
     square_1 = Square("1",10)
     square_2 = Square("2",20)
 
-    square_1.area()
-    square_1.perimeter()
-    square_2.area()
-    square_2.perimeter()
+    print(f"The area of square {square_1.name} is {square_1.area}")
+    print(f"The perimeter of square {self.name} is {4*(self.side)}")
 
 if __name__ == "__main__":
     main()
