@@ -24,6 +24,17 @@ class Teacher(Staff):
     def hello(self):
         print(f"Hello, my name is {self.name}. I'm {self.age} years old, and I'm a {self.role} in the {self.department} department. My salary is {self.salary}!")
 
+class Square:
+    def __init__(self, name, side):
+        self.name = name
+        self.side = side
+    
+    def area(self):
+        print(f"The area of square {self.name} is {(self.side)**2}")
+    
+    def perimeter(self):
+        print(f"The perimeter of square {self.name} is {4*(self.side)}")
+
 def main():
     # Step 1
     print(f"----- Step 1 -----")
@@ -41,7 +52,15 @@ def main():
     tea_james.hello()
     tea_chris.hello()
 
-    return
+    # Step 3
+    print(f"\n----- Step 3 -----")
+    square_1 = Square("1",10)
+    square_2 = Square("2",20)
+
+    square_1.area()
+    square_1.perimeter()
+    square_2.area()
+    square_2.perimeter()
 
 if __name__ == "__main__":
     main()
