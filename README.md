@@ -86,10 +86,14 @@ Week 7 Python Assignments - algorithms wheeee!
 
 ### week8main.py
 
-Week 8 Python Assignment - unique operations
+Week 8 Python Assignment - Unique Function Development
+
+### algotesting.py
+
+Algorithm code testing for textbook problems
 
 ## Week 9
 
 ### week9main.py
 
-Week 9 Python Assignment
+Week 9 Python Assignment - Object Oriented Programming Practice
