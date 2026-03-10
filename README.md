@@ -102,4 +102,4 @@ Week 9 Python Assignment - Object Oriented Programming Practice
 
 ### week10main.py
 
-Week 10 Python Assignment -
+Week 10 Python Assignment - Astronomy OOP Exercise
