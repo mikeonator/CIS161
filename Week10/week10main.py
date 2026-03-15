@@ -4,8 +4,8 @@ class SolarObject:
     def __init__(self, FarthestSunDistance: float, OrbitDays: int):
         '''
         Intialize class SolarObject containing:
-        Farthest distance from the sun in au
-        spin
+        Farthest distance from the sun in au,
+        spin,
         and the time to orbit whatever it is orbiting(average) in days.
         '''
         self.FarthestSunDistance: float = FarthestSunDistance
@@ -14,27 +14,44 @@ class SolarObject:
     def colonization(self):
         '''
         return the colonization potential of the SolarObject.
+        600,000,000 / distance from sun
+
         (i had to do the type ignore thing to get my linter to stop freaking)
         '''
         return round((6000000000 / float(self.FarthestSunDistance)), 2)  # type: ignore
 
     def spin(self):
+        '''
+        does nothing lol (gets overidden later)
+        '''
         pass
 
 
 class Planet(SolarObject):
     def __init__(self, FarthestSunDistance: float, OrbitDays: int):
+        '''
+        init planet w all solarobject attributes
+        '''
         super().__init__(FarthestSunDistance, OrbitDays)
 
     def spin(self):  # type: ignore
+        '''
+        returns spin
+        '''
         return "slightly elliptical"
 
 
 class Comet(SolarObject):
     def __init__(self, FarthestSunDistance: float, OrbitDays: int):
+        '''
+        init comet w all solarobject attributes
+        '''
         super().__init__(FarthestSunDistance, OrbitDays)
 
     def spin(self):  # type: ignore
+        '''
+        returns spin
+        '''
         return "like crazy"
 
 
