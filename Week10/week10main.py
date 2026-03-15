@@ -45,6 +45,34 @@ def main():
     HalleyComet = Comet(35.98, 27740)
     HaleBopp = Comet(362, 900000)
 
+    print(f"Earth:")
+    print(f"    Colonization Potential: {Earth.colonization():,.0f} people")
+    print(
+        f"    Furthest Distance from the Sun: {Earth.FarthestSunDistance} au")
+    print(f"    Orbital Period: {Earth.OrbitDays} days")
+    print(f"    Spin: {Earth.spin()}")
+
+    print(f"Mars:")
+    print(f"    Colonization Potential: {Mars.colonization():,.0f} people")
+    print(f"    Furthest Distance from the Sun: {Mars.FarthestSunDistance} au")
+    print(f"    Orbital Period: {Mars.OrbitDays} days")
+    print(f"    Spin: {Mars.spin()}")
+
+    print(f"Halley's Comet:")
+    print(
+        f"    Colonization Potential: {HalleyComet.colonization():,.0f} people")
+    print(
+        f"    Furthest Distance from the Sun: {HalleyComet.FarthestSunDistance} au")
+    print(f"    Orbital Period: {HalleyComet.OrbitDays/365.25:,.2f} years")
+    print(f"    Spin: {HalleyComet.spin()}")
+
+    print(f"Hale Bopp:")
+    print(f"    Colonization Potential: {HaleBopp.colonization():,.0f} people")
+    print(
+        f"    Furthest Distance from the Sun: {HaleBopp.FarthestSunDistance} au")
+    print(f"    Orbital Period: {HaleBopp.OrbitDays/365.25:,.2f} years")
+    print(f"    Spin: {HaleBopp.spin()}")
+
     return
 
 
