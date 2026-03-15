@@ -42,6 +42,8 @@ def main():
 
     Earth = Planet(1, 365)
     Mars = Planet(1.524, 687)
+    HalleyComet = Comet(35.98, 27740)
+    HaleBopp = Comet(362, 900000)
 
     return
 
